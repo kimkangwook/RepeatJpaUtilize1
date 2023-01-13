@@ -1,0 +1,19 @@
+package jpabook.jpashop2.domain.Item;
+
+import jdk.jfr.Enabled;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@Getter
+@Setter
+@DiscriminatorValue(value="B")
+public class Book extends Item{
+
+    private String author;
+    private String isbn;
+
+}
