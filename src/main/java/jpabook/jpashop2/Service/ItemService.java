@@ -1,6 +1,7 @@
 package jpabook.jpashop2.Service;
 
 import jpabook.jpashop2.Repository.ItemRepository;
+import jpabook.jpashop2.domain.Item.Book;
 import jpabook.jpashop2.domain.Item.Item;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,13 @@ public class ItemService {
     public void saveItem(Item item) {
         itemRepository.save(item);
     }
+
+//    @Transactional
+//    public void updateItem(Long itemId, Book param) {
+//        Item findItem = itemRepository.findOne(itemId); 변경감지 - DB에서 id를 통해 객체 들고오면 영속성 컨텍스트가 관리하게 됨
+//        findItem.setPrice(param.getPrice());
+//
+//    }
 
     public List<Item> findItems() {
         return itemRepository.findAll();

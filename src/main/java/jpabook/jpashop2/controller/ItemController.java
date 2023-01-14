@@ -65,7 +65,7 @@ public class ItemController {
     @PostMapping("/items/{itemId}/edit")
     public String updateItemForm(@ModelAttribute("form") BookForm form) {
         Book book = new Book();
-        book.setId(form.getId());
+        book.setId(form.getId()); // 식별자를 가지고 있으므로 이미 DB에 들어갔다온 녀석, 준영속 엔티티임(JPA가 관리안함)
         book.setName(form.getName());
         book.setPrice(form.getPrice());
         book.setStockQuantity(form.getStockQuantity());
