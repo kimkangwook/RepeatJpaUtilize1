@@ -62,7 +62,7 @@ public class Order {
         order.setMember(member);
         order.setDelivery(delivery);
         for (OrderItem orderItem : orderItems) {
-            order.getOrderItems().add(orderItem);
+            order.addOrderItem(orderItem); // order.getOrderItems().add(orderItem) 이런식으로 써서 orderItem에 order인식못했던거임
         }
         order.setStatus(OrderStatus.ORDER);
         order.setOrderDate(LocalDateTime.now());
